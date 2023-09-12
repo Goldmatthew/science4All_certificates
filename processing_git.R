@@ -61,9 +61,8 @@ output <- rmarkdown::render(input = "generate_certificate.Rmd",
 
 
 # gert::git_add() # adding
-git_add(certificate_filename_html)
-git_commit_all("new_certificate")
-# gert::git_commit("updating cv")
+gert::git_add("certificates/")
+gert::git_commit("new_certificate")
 gert::git_push()
 cli::cli_alert_success("The certificate has been uploaded on Github!")
 
