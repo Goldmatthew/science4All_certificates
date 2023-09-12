@@ -4,7 +4,7 @@ library(rmarkdown)
 library(googledrive)
 library(qrcode)
 library(random)
-library(gitr)
+library(git2r)
 
 ## ---- ## ---- ## ---- ##
 participant <- "Prova"
@@ -52,17 +52,22 @@ output <- rmarkdown::render(input = "generate_certificate.Rmd",
                   output_file = certificate_filename_html, 
                   output_dir = certificates_path)
 
-# pagedown::chrome_print(output)
 
-system("git config --global user.email 'mattia.doro@gmail.com'")
-system("git config --global user.name 'Goldmatthew'")
+# pagedown::chrome_print(output)
+git2r::add(repo = getwd())
+
+
+
+
+# system("git config --global user.email 'mattia.doro@gmail.com'")
+# system("git config --global user.name 'Goldmatthew'")
 # gaa() # git add .
 
-system("git ad .")
-# gcc() # git commit   #gcmsg
-
-system("git commit -m 'x'")
-
-system("git push")
+# system("git add .")
+# # gcc() # git commit   #gcmsg
+# 
+# system("git commit -m 'x'")
+# 
+# system("git push")
 # gp()  # git push
 
