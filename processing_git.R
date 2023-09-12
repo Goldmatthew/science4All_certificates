@@ -4,7 +4,7 @@ library(rmarkdown)
 library(googledrive)
 library(qrcode)
 library(random)
-library(git2r)
+library(gert)
 
 ## ---- ## ---- ## ---- ##
 participant <- "Prova"
@@ -27,15 +27,15 @@ write.table(participant,
 random_code <- randomStrings(n = 1)
 certificates_path <- "./certificates/"
 
-certificate_filename <- paste0(participant, "_", random_code, ".pdf")
+# certificate_filename <- paste0(participant, "_", random_code, ".pdf")
 certificate_filename_html <- paste0(participant, "_", random_code, ".html")
 
 file.create(paste0(certificates_path, certificate_filename_html))
-file.create(paste0(certificates_path, certificate_filename))
+# file.create(paste0(certificates_path, certificate_filename))
 
 link <- NULL
 while (length(link) == 0){
-    link <- drive_link(certificate_filename)
+    link <- drive_link(certificate_filename_html)
 }
 
 #create the QR code
@@ -53,9 +53,13 @@ output <- rmarkdown::render(input = "generate_certificate.Rmd",
                   output_file = certificate_filename_html, 
                   output_dir = certificates_path)
 
-
 # convert html file in pdf
-pagedown::chrome_print(output)
+# pagedown::chrome_print(output)
 
 # Open the pdf file
-browseURL(normalizePath(paste0("./certificates/", certificate_filename)))
+# browseURL(normalizePath(paste0("./certificates/", certificate_filename)))
+
+
+
+output
+
