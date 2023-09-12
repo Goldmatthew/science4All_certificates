@@ -54,9 +54,15 @@ output <- rmarkdown::render(input = "generate_certificate.Rmd",
 
 # pagedown::chrome_print(output)
 
-# git config --global user.email "mattia.doro@gmail.com"
-# git config --global user.name "Goldmatthew"
-gaa() # git add .
-gcc() # git commit   #gcmsg
-gp()  # git push
+system("git config --global user.email 'mattia.doro@gmail.com'")
+system("git config --global user.name 'Goldmatthew'")
+# gaa() # git add .
+
+system("git ad .")
+# gcc() # git commit   #gcmsg
+
+system("git commit -m 'x'")
+
+system("git push")
+# gp()  # git push
 
