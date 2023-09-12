@@ -1,0 +1,7 @@
+"0","## Global options"
+"0","knitr::opts_chunk$set(cache = TRUE)"
+"0",""
+"0","library(googledrive)"
+"0","library(qrcode)"
+"0","library(random)"
+"0",""
