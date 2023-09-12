@@ -60,7 +60,8 @@ output <- rmarkdown::render(input = "generate_certificate.Rmd",
 # browseURL(normalizePath(paste0("./certificates/", certificate_filename)))
 
 
-gert::git_add() # adding
+# gert::git_add() # adding
+git_add(certificate_filename_html)
 git_commit_all("new_certificate")
 # gert::git_commit("updating cv")
 gert::git_push()
