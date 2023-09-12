@@ -25,7 +25,7 @@ write.table(participant,
 
 ###
 random_code <- randomStrings(n = 1)
-certificates_path <- "./certificates/"
+certificates_path <- "./docs/"
 
 # certificate_filename <- paste0(participant, "_", random_code, ".pdf")
 certificate_filename_html <- paste0(participant, "_", random_code, ".html")
