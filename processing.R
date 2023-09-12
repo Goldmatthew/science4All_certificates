@@ -25,7 +25,7 @@ write.table(participant,
 
 ###
 random_code <- randomStrings(n = 1)
-certificates_path <- "./certificates/"
+certificates_path <- "./docs/"
 
 # certificate_filename <- paste0(participant, "_", random_code, ".pdf")
 certificate_filename_html <- paste0(participant, "_", random_code, ".html")
@@ -57,6 +57,6 @@ output <- rmarkdown::render(input = "generate_certificate.Rmd",
 # git config --global user.email "mattia.doro@gmail.com"
 # git config --global user.name "Goldmatthew"
 gaa() # git add .
-gcc() # git commit
+gcc() # git commit   #gcmsg
 gp()  # git push
 
