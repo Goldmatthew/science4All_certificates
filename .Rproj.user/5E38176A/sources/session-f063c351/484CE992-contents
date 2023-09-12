@@ -24,7 +24,7 @@ library(random)
 source_folder <- "./temp/"
 
 participant_name <- read.table(paste0(source_folder, "participant.txt"))$V1
-cat(participant_name, ", questi sono i tuoi risultati")
+cat(participant_name, ", questi sono i tuoi risultati", sep = "")
 
 ```
 
