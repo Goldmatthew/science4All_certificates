@@ -7,7 +7,7 @@ library(random)
 library(gert)
 
 ## ---- ## ---- ## ---- ##
-participant <- "Prova"
+participant <- "Prova2"
 # data_file <- ""
 ## ---- ## ---- ## ---- ##
 
@@ -60,6 +60,12 @@ output <- rmarkdown::render(input = "generate_certificate.Rmd",
 # browseURL(normalizePath(paste0("./certificates/", certificate_filename)))
 
 
+gert::git_add() # adding
+git_commit_all("new_certificate")
+# gert::git_commit("updating cv")
+gert::git_push()
+cli::cli_alert_success("The certificate has been uploaded on Github!")
 
-output
+
+
 
